@@ -1,0 +1,193 @@
+project_tilte = "Medical Report"
+
+def display_header():
+    print("""
++------------------------------------------------------------+
+|                      MEDICAL REPORT                        |
++------------------------------------------------------------+
+| Name         : Harsh Ranjan                              |
+| Register No. : 26BSA10018                                |
+| Course Code  : CSE1021                                   |
+| Course Title : Introduction To Problem Solving           |
++------------------------------------------------------------+
+""")
+    input("Press Enter to continue...")
+display_header()
+print("*"*60)
+print("\n")
+patient_name = input("Please Enter Your Name Here:")
+age = int(input("Please Enter Your Age:"))
+
+print("Patient Name:", patient_name)
+print("Age", age)
+
+print("Choose Your Sex/Gender:")
+print("1. MALE ")
+print("2. FEMALE" )
+print("3. Others" )
+
+choice = int(input("Please Enter Your Choice:"))
+
+if choice == 1:
+    print(" Sex:Male")
+elif choice == 2:
+    print("Sex:Female")
+elif choice == 3:
+    print("Sex:Others")
+else:
+    print("Invalid Choice Please choose a valid option.")
+
+
+contact_number=int(input("Please Enter Your Contact Number:"))
+patient_address = input("Please Enter Patient Address:")
+
+print("-"*40)
+
+print("Doctor's Name:", "Dr. Harsh Ranjan")
+
+print("-"*40)
+
+print("     Patient Data")
+print("           MEDICAL HISTORY:")
+print("           ----------------")
+print("\n")
+print("\n")
+
+height = float(input("Please Enter Your Height (in m)"))
+weight = float(input("Please Enter Your Height (in kg)"))
+
+print("Height(in m):", height)
+print("Weight(in Kg)", weight)
+
+print("\n")
+bmi = weight/ height**2
+
+print("Body Mass Index Level:", bmi)
+
+if bmi<= 18.5:
+    print(f"According to W.H.O classifiaction patient {patient_name} lies under 'Underweight' criteria")
+elif bmi<25:
+    print(f"According to W.H.O classifiaction patient {patient_name} lies under 'Normal Weight' criteria")
+elif bmi<30:
+    print(f"According to W.H.O classifiaction patient {patient_name} lies under 'Over Weight' criteria")
+else:
+    print(f"According to W.H.O classifiaction patient {patient_name} lies under 'Obese' criteria")
+
+print("Tick The Correct Whether You are suffering from:")
+status1 = int(input("Please Enter the Migrane status"))
+print("Migarne:")
+print("1.  Active ")
+print("2.  Inactive")
+
+if status1 == 1:
+    print("Status of  Migarne: Active")
+elif status1 == 2:
+    print("Staus of Migrane: Inactive")
+
+
+status2 = int(input("Please Enter The Allergy Status:"))
+print("Alelrgy:")
+print("1. YES")
+print("2. No")
+
+if status2 == 1:
+    print("Allergic : YES")
+elif status2 == 2:
+    print("Allergic : NO")
+
+print("-"*40)
+
+print("         Blood Report    ")
+print("       ----------------   ")
+
+print("-"*40)
+
+print("Heart Report")
+print("------------")
+systolic_bp= int(input("Please enter your Systolic Blood Pressure Level:"))
+print("   Systolic Blood Pressure:", systolic_bp)
+diastolic_bp = int(input("Please Enter Your Diastolic Blood Pressure Level:"))
+print("    Diastolic Blood Pressure:", diastolic_bp)
+
+if systolic_bp < 90 and diastolic_bp<60:
+    print(f"{patient_name} : Low Blood Pressure Level")
+    print("Suggestions: Adequate fluids, sit/lie down if dizzy, medical evaluation if persistent \nMedicine: No automatic medicine")
+elif systolic_bp >120 and diastolic_bp>80:
+    print(f"{patient_name} : High Blood Pressure Level")
+    print("Suggestions: Reduce excess salt, exercise regularly, maintain healthy weight, avoid smoking \nMedicine: Antihypertensive medicine only as prescribed by doctor")
+elif systolic_bp>=90 and systolic_bp<=120 and diastolic_bp<=60 and diastolic_bp<=80:
+    print(f"{patient_name} : Normal Blood Pressure Level")
+elif systolic_bp>=90 and systolic_bp<=120 and diastolic_bp<60:
+    print(f"{patient_name} : Low Blood Pressure Level")
+    print("Suggestions: Adequate fluids, sit/lie down if dizzy, medical evaluation if persistent \nMedicine: No automatic medicine")
+elif systolic_bp>=90 and systolic_bp<=120 and diastolic_bp>80:
+    print(f"{patient_name} : High Blood Pressure Level")
+    print("Suggestions: Reduce excess salt, exercise regularly, maintain healthy weight, avoid smoking \nMedicine: Antihypertensive medicine only as prescribed by doctor")
+elif systolic_bp<90 and  diastolic_bp<=60 and diastolic_bp<=80:
+    print(f"{patient_name} : Low Blood Pressure")
+    print("Suggestions: Adequate fluids, sit/lie down if dizzy, medical evaluation if persistent \nMedicine: No automatic medicine")
+elif systolic_bp>120 and  diastolic_bp<=60 and diastolic_bp<=80:
+    print(f"{patient_name} : High Blood Pressure")
+    print("Suggestions: Reduce excess salt, exercise regularly, maintain healthy weight, avoid smoking \nMedicine: Antihypertensive medicine only as prescribed by doctor")
+print("\n")
+print("-"*30)
+
+pulse = int(input("Please Enter Your Pulse Rate Here:"))
+print("  Pulse :", pulse)
+if pulse<60:
+    print(f"{patient_name} :is suffering from Bradycardiac")
+elif pulse<=60 and pulse<=100:
+    print(f"{patient_name} : is Having Noramal Pulse Rate")
+elif pulse>100:
+    print(f"{patient_name} : is suffering from Tachycardia")
+print("-"*30)
+
+total_cholestrol = float(input("Enter Total Cholestrol Level:"))
+print("Total Cholestrol Level", total_cholestrol)
+if total_cholestrol<0:
+    print(f"{patient_name} : is having Normal Cholestrol Level")
+elif total_cholestrol<=0 and total_cholestrol>=200:
+    print(f"{patient_name} : is having Normal Cholestrol level")
+else:
+    print(f"{patient_name} : is having High Cholestrol Level")
+    print("Remedy: \n Suggestions: Reduce saturated/trans fats, increase fiber-rich foods, exercise \n Medicine: Cholesterol-lowering medicines such as statins may be prescribed by a doctor depending on overall cardiovascular risk.")
+print("\n")
+print("-"*30)
+
+print(" SGPT Report: ")
+print("----------------")
+
+sgpt = float(input("Enter Your SGPT Level:"))
+print("SGPT level:", sgpt)
+
+if sgpt<4 and sgpt>=36:
+    print(f"{patient_name} : Normal Level")
+elif sgpt>36:
+    print(f"{patient_name} : Possible Liver Problem")
+    print("Suggestions: Avoid alcohol, review medicines/supplements with a doctor, investigate the cause\nMedicine: No single medicine; treatment depends on the cause.")
+print("\n")
+print("-"*30)
+
+sgot = float(input("Enter Your SGOT level:"))
+print("SGOT level:", sgot)
+
+if sgot<8 and sgpt>=33:
+    print(f"{patient_name} : SGOT Normal Level")
+elif sgot>33:
+    print(f"{patient_name} : Possible Liver Problem")
+    print("Suggestions: Check ALT, bilirubin and other LFTs; consult doctor \nMedicine: Depends on the underlying cause.")
+print("\n")
+print("-"*30)
+
+bilirubin = float(input("Enter Your Bilirubin Level:"))
+print("Bilirubin Level:", bilirubin)
+
+if bilirubin<0.1 and bilirubin>=1.2:
+    print(f"{patient_name} : Having Normal Bilirubin Level")
+elif bilirubin>1.2:
+    print(f"{patient_name} : Suffering from Jaundice")
+    print("Suggestions: Medical evaluation to identify the cause \nMedicine: Monocef IV")
+
+print("-"*20 +"Health Is Wealth"+ "-"*20 )
+
+
